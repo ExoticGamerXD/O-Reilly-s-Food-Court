@@ -7,7 +7,7 @@ A single-page site for O'Reilly's Food Court, a lively single food stall in Cork
 ```
 oreillys-food-court/
 ├── index.html      ← the whole site (HTML + CSS + JS, no build step)
-├── images/         ← drop your real photos in here (see list below)
+├── images/         ← pre-filled with stock photos; swap in real ones when you can (see list below)
 └── README.md       ← this file
 ```
 
@@ -25,22 +25,39 @@ Fonts (Anton + Inter + IBM Plex Mono) load from Google Fonts over the internet, 
 - A pausable marquee strip — there's a dedicated play/pause button, and it respects reduced motion
 - Everything respects `prefers-reduced-motion`: animations are disabled/instant for anyone with that OS setting on
 
-## About the empty image slots
+## About the images — these are stock, not real photos of O'Reilly's
 
-I don't have real photos of O'Reilly's, so **I didn't fake any** — every photo slot currently shows a clean, on-brand placeholder (a thin dashed tag with the filename it's waiting for) instead of a stock photo or a broken-image icon. The page still looks fully designed and intentional as-is. As soon as you add a real file with the **exact filename** listed below to `images/`, it swaps in automatically — no HTML edits needed.
+Every photo slot except the favicon is currently filled with a **real, freely-licensed stock photo** from Wikimedia Commons — picked to be appetising and on-theme (burgers, a Korean-style chicken sandwich, a Caesar wrap, wood-fired pizza, plus two moody oven/kitchen shots for the hero and story sections). None of them are actually O'Reilly's — they're a placeholder that looks intentional rather than broken, so the site doesn't feel empty while you gather real photos.
 
-## Images to drop in
+**Swap them out when you can** — replace the file in `images/` with a real photo using the **exact same filename** and it drops straight in, no HTML edits needed. A site with real photos of your actual food and stall will always beat stock.
+
+I specifically avoided any stock photo that showed a recognisable person's face or another real business's name/signage, since publishing those on your site could look misleading or raise privacy concerns. A couple of my first picks failed that check and got swapped for the safer ones now in place.
+
+### Photo credits (attribution required by their licenses)
+
+| Filename | Source | Photographer | License |
+|---|---|---|---|
+| `images/hero.jpg`, `images/og-image.jpg` | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Pizza_baking_in_Wood-fired_oven.jpg) | Jared Tarbell | CC BY 2.0 |
+| `images/counter.jpg` | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Wood_Oven_Pizza.jpg) | Oak Wood Fire Pizza | CC BY-SA 4.0 |
+| `images/dish-1.jpg` (Smash Burger) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Double_Smash_Burger_with_Fries.jpg) | Wiki.cullin | CC BY-SA 4.0 |
+| `images/dish-2.jpg` (Korean Style Burger) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Korean_fried_chicken_sandwich_with_cucumber_slaw_and_gochujang,_plus_French_fries_-_Cambridge,_MA.jpg) | Daderot | CC0 (public domain, no attribution required) |
+| `images/dish-3.jpg` (Caesar Chicken Wrap) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Crispy_Chick%27n_Caesar_Wrap.jpg) | Mx. Granger | CC0 (public domain, no attribution required) |
+| `images/dish-4.jpg` (Stone-Baked Pizza) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:DZ6_0560_Wood-fired_pizza_topped_with_ham_peppers_and_melted_cheese_ready_to_slice_and_serve.jpg) | PattayaPatrol | CC BY-SA 4.0 |
+
+The CC BY / CC BY-SA files technically require attribution wherever they're used — this table satisfies that. Once you replace a file with your own real photo, you can delete its row here. `images/favicon.png` was left as a placeholder since a stock photo doesn't make sense as a logo mark — that one genuinely needs your own branding (see table below).
+
+## Image reference (filenames the site expects)
 
 | Filename | Used for | Recommended size |
 |---|---|---|
-| `images/hero.jpg` | Full-bleed hero background (top of page) | 1920×1080 or larger, landscape. A wide shot of the stall in full swing — evening, some movement, a bit of neon/signage if you have it |
-| `images/counter.jpg` | Story section image + the location card in "Find Us" | 1200×1500, portrait-ish. Straight-on shot of the counter, ideally mid-service |
+| `images/hero.jpg` | Full-bleed hero background (top of page) | 1920×1080 or larger, landscape |
+| `images/counter.jpg` | Story section image + the location card in "Find Us" | 1200×1500, portrait-ish |
 | `images/dish-1.jpg` | "Smash Burger" card in the menu grid | 900×1200, portrait |
 | `images/dish-2.jpg` | "Korean Style Burger" card | 900×1200, portrait |
 | `images/dish-3.jpg` | "Caesar Chicken Wrap" card | 900×1200, portrait |
 | `images/dish-4.jpg` | "Stone-Baked Pizza" card | 900×1200, portrait |
 | `images/og-image.jpg` | Social share preview (link unfurl on WhatsApp/Instagram/etc.) — no on-page fallback, just skipped if missing | 1200×630, landscape |
-| `images/favicon.png` | Browser tab icon — no on-page fallback, browser just shows its default icon if missing | 512×512, square, ideally your logo mark on a solid background |
+| `images/favicon.png` | Browser tab icon — **not currently filled in**, browser just shows its default icon until you add one | 512×512, square, ideally your logo mark on a solid background |
 
 Tips:
 - Keep photos bright and true-to-life — the black-and-red palette does the "premium" work, so avoid heavy filters that fight it.
