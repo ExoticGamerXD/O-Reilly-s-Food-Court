@@ -15,15 +15,31 @@ Everything is self-contained in `index.html` — nothing to compile or install. 
 
 Fonts (Anton + Inter + IBM Plex Mono) load from Google Fonts over the internet, so an internet connection is needed to see the intended typefaces — it still works offline, just with fallback fonts.
 
-## Animations included
+## Animations & interactions included
 
-- Staggered hero headline reveal on load (each line fades/slides in with its own delay)
+- Brief branded preloader on first load (fails safe — never blocks the page, skipped instantly with reduced motion)
+- Subtle grain texture overlay for a tactile, less-flat finish
+- Staggered hero headline reveal on load (each line fades/slides in with its own delay), plus a slow scroll-linked zoom on the hero photo
 - Scroll-triggered fades on every major section (`IntersectionObserver`-based)
+- Header hides on scroll-down and reappears on scroll-up, plus a scroll-spy that highlights the current section in the nav
+- **Live "Open now" / "Closed · opens X" status badge** in the hero and the hours card — computed from your real opening hours in the Europe/Dublin timezone, so it's always accurate to the minute. Today's row in the hours card is also auto-highlighted.
+- Menu category tabs (All / Burgers / Wraps / Pizza) filter the dish cards in place
 - Cursor-follow red spotlight glow on the menu cards
+- Magnetic pull on the primary buttons — they nudge toward your cursor on hover (desktop only, skipped on touch and reduced motion)
 - Shimmer sweep on the main "Get Directions" button
 - Animated count-up stats (84 Google reviews, 1 stall/full menu, 7 days open, 0 bookings required)
 - A pausable marquee strip — there's a dedicated play/pause button, and it respects reduced motion
+- A gallery section ("The Space") with a lightbox — click any shot to view it full-size, with keyboard arrow/Escape support
+- Back-to-top button that appears after you scroll past the first screen
 - Everything respects `prefers-reduced-motion`: animations are disabled/instant for anyone with that OS setting on
+
+### If you change the opening hours
+
+The live status badge and today-highlight are driven by hardcoded logic in `index.html`, not the visible text — if you edit the hours, update **both** places:
+- The `HOURS` object inside the `openStatus()` function near the bottom of the `<script>` block (minutes-from-midnight per day)
+- The `data-days` attributes on the `.hours-card .row` elements in the Visit section
+
+They're deliberately kept as plain numbers (not parsed from the display text) so the logic stays simple and dependency-free — just remember to keep both in sync with whatever hours you put in the visible copy.
 
 ## About the images — these are stock, not real photos of O'Reilly's
 
